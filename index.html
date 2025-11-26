@@ -26,7 +26,7 @@
             </div>
             
             <!-- Button to add a task -->
-            <button id="addTaskBtn" class="btn btn-primary mb-3">Add Task</button><!-- mb-3 is bottom spacing -->
+            <button id="addTaskBtn" class="btn btn-success">Add Task</button><!-- mb-3 is bottom spacing -->
 
             <!-- Filter by category -->
             <div class="mb-3">
@@ -45,6 +45,62 @@
             <div id="taskList" class="list-group">
                 <!-- Tasks will be dynamically added here -->
             </div>
+        </div>
+
+        <!-- Form for adding or editing a task -->
+        <div id="taskFormView" style="display: none;">
+            <h2 class="mb-4">Add Task</h2>
+            <form id="taskForm">
+                <!-- Task name field -->
+                <div class="mb-3">
+                    <label class="form-label">Task Name:</label>
+                    <input type="text" class="form-control" id="taskName" required pattern="[a-zA-Z\s]+" title="Only letters, and spaces allowed">
+                    <div class="invalid-feedback">Task name can only contain letters, and spaces</div>
+                </div>
+
+                <!-- Category -->
+                <div class="mb-3">
+                    <label class="form-label">Category:</label>
+                    <select class="form-select" id="taskCategory" required>
+                        <option value="">Select category</option>
+                    </select>
+                </div>
+
+                <!-- Task priority -->
+                <div class="mb-3">
+                    <label class="form-label">Priority:</label>
+                    <div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="priority" value="low" id="priorityLow" required>
+                            <label class="form-check-label" for="priorityLow">Low</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="priority" value="medium" id="priorityMedium">
+                            <label class="form-check-label" for="priorityMedium">Medium</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="priority" value="high" id="priorityHigh">
+                            <label class="form-check-label" for="priorityHigh">High</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Date and time -->
+                <div class="mb-3">
+                    <label class="form-label">Due Date and Time:</label>
+                    <input type="datetime-local" class="form-control" id="taskDueDate" required>
+                </div>
+
+                <!-- Description (optional) -->
+                <div class="mb-3">
+                    <label class="form-label">Description (optional):</label>
+                    <textarea class="form-control" id="taskDescription" pattern="[a-zA-Z0-9\s\.,!?\-'"]+" title="Only letters, numbers, spaces, and basic punctuation allowed"></textarea>
+                    <div class="invalid-feedback">Description can only contain letters, numbers, spaces, and basic punctuation</div>
+                </div>
+
+                <button type="submit" class="btn btn-success">Add Task</button>
+                <button type="button" class="btn btn-secondary ms-2" id="cancelBtn">Cancel</button>
+            </form>
         </div>
 
         <!-- Load scripts -->
