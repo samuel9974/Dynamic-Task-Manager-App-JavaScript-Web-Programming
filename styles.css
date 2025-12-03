@@ -1,97 +1,26 @@
-    /* Task Item Styles */
+/* Task Item - only custom styles Bootstrap can't provide */
 .task-item {
-    padding: 12px 15px;
-    margin-bottom: 8px;
-    border-radius: 5px;
     border-left: 4px solid #ccc;
 }
 
-/* Task Content Container */
-.task-content {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-/* Task Info (Name, Category, Priority, Status) */
-.task-info {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.task-name {
-    font-weight: bold;
-    color: #333;
-    white-space: nowrap;
-}
-
-.task-category {
-    color: #666;
-    font-size: 0.9em;
-    white-space: nowrap;
-}
-
-.task-priority {
-    color: #666;
-    font-size: 0.9em;
-    white-space: nowrap;
-}
-
-.task-status {
-    padding: 4px 8px;
-    background-color: #e9ecef;
-    border-radius: 3px;
-    font-size: 0.85em;
-    font-weight: 500;
-    color: #495057;
-    white-space: nowrap;
-}
-
-.task-status.overdue {
-    background-color: #f8d7da;
-    color: #721c24;
-}
-
-/* Task Actions (Buttons) */
-.task-actions {
-    display: flex;
-    gap: 6px;
-    align-items: center;
-}
-
-.task-actions .btn {
-    padding: 5px 10px;
-    font-size: 0.85em;
-    margin: 0;
-}
-
-/* Priority-based left border */
+/* Priority-based left border colors */
 .task-item.priority-low {
-    border-left-color: #28a745;
+    border-left-color: #198754;
+    /* Bootstrap success */
 }
 
 .task-item.priority-medium {
     border-left-color: #ffc107;
+    /* Bootstrap warning */
 }
 
 .task-item.priority-high {
     border-left-color: #dc3545;
+    /* Bootstrap danger */
 }
 
-/* Priority badge text color */
-.priority-badge {
-    font-weight: bold;
-}
-
-.priority-badge.priority-low {
-    color: #28a745;
-}
-
-.priority-badge.priority-medium {
-    color: #ffc107;
-}
-
-.priority-badge.priority-high {
-    color: #dc3545;
+/* Overdue task background highlight */
+.task-item.overdue-task,
+.task-item.overdue-task .task-content {
+    background-color: #82232e;
 }
